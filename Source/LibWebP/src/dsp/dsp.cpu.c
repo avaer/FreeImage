@@ -13,9 +13,9 @@
 
 #include "./dsp.h"
 
-#if defined(__ANDROID__)
-#include <cpu-features.h>
-#endif
+// #if defined(__ANDROID__)
+// #include <cpu-features.h>
+// #endif
 
 //------------------------------------------------------------------------------
 // SSE2 detection.
