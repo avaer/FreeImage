@@ -21,7 +21,10 @@ it under the terms of the one of three licenses as you choose:
    for more information
 */
 
-#line 33 "dcraw/dcraw.c"
+#ifndef _INTERNAL_DEFINES_H_
+#define _INTERNAL_DEFINES_H_
+
+// #line 33 "dcraw/dcraw.c"
 #ifndef USE_JPEG
 #define NO_JPEG
 #endif
@@ -165,3 +168,10 @@ typedef uint64_t UINT64;
 
 #define BAYER2(row,col) \
 	image[((row) >> shrink)*iwidth + ((col) >> shrink)][fcol(row,col)]
+
+#if defined(__ANDROID__)
+// #include <asm/byteorder.h>
+void swab(const void *from, void*to, ssize_t n);
+#endif
+
+#endif
